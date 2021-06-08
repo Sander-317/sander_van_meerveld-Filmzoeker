@@ -6,7 +6,27 @@ const movieList = document.getElementById("movie-list")
 document.querySelectorAll(".radio-button").forEach(button => button.addEventListener("change", handleOnChangeEvent ))
 
 function handleOnChangeEvent(event){
-    console.log("werkt")
+    console.log(event.target)
+    // object = event.target
+    // filter = object.value
+    // console.log(filter)
+    switch(event.target.value) {
+        case "new-movies":
+            console.log("new-movies")
+            break
+        case "avengers":
+            console.log("avengers")
+            break
+        case "x-men":
+            console.log("x-men")
+            break
+        case "princess":
+            console.log("princess")
+            break
+        case "batman":
+            console.log("batman")
+            break
+    }
 }
 
 const movieTitles = movies.map((item) => {

@@ -3,6 +3,11 @@ console.log("test")
 console.log(movies)
 
 const movieList = document.getElementById("movie-list")
+document.querySelectorAll(".radio-button").forEach(button => button.addEventListener("change", handleOnChangeEvent ))
+
+function handleOnChangeEvent(event){
+    console.log("werkt")
+}
 
 const movieTitles = movies.map((item) => {
     moviePoster = item.Poster

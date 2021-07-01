@@ -1,51 +1,58 @@
 
 console.log("test")
-console.log(movies)
+console.log(movies.length)
 
 const movieList = document.getElementById("movie-list")
 document.querySelectorAll(".radio-button").forEach(button => button.addEventListener("change", handleOnChangeEvent ))
 
+// addMoviesToDom(movies)
+
 function handleOnChangeEvent(event){
     console.log(event.target)
-    // object = event.target
-    // filter = object.value
-    // console.log(filter)
     switch(event.target.value) {
         case "new-movies":
             console.log("new-movies")
             break
         case "avengers":
             console.log("avengers")
+            filterMovies("Avengers")
             break
         case "x-men":
             console.log("x-men")
+            filterMovies("X-Men")
             break
         case "princess":
             console.log("princess")
+            filterMovies("Princess")
             break
         case "batman":
             console.log("batman")
+            filterMovies("Batman")
+            // movies.filter(filterMovies("batman"))
             break
+        default:
+            addMoviesToDom(movies)
     }
 }
 
-const movieTitles = movies.map((item) => {
-    moviePoster = item.Poster
-    let newPoster = document.createElement("img")
-    newPoster.src = `${moviePoster}`
-    // movieList.appendChild(newPoster)
-    addMoviesToDom(newPoster)
 
-})
-
-function addMoviesToDom(movieArray){
-    movieList.appendChild(movieArray)
+function filterMovies(filter){
+    movieList.innerHTML =""
+    let filteredMovies = []
+    filteredMovies = movies.filter((item) => {
+        return item.Title.includes(filter) 
+        })
+    console.log(filteredMovies)
+    addMoviesToDom(filteredMovies)
 }
 
-// const movieTitles = movies.map((item) => {
-//     movieTitle = item.Title
-//     let newLi = document.createElement("li")
-//     newLi.innerHTML = `${movieTitle}`
-//     movieList.appendChild(newLi)
+function addMoviesToDom(movieArray){
+    movieArray.map((item) => {
+        moviePoster = item.Poster
+        let newPoster = document.createElement("img")
+       newPoster.src = `${moviePoster}`
+    movieList.appendChild(newPoster)
+    })
+}
 
-// })
+

@@ -5,7 +5,7 @@ console.log(movies.length)
 const movieList = document.getElementById("movie-list")
 document.querySelectorAll(".radio-button").forEach(button => button.addEventListener("change", handleOnChangeEvent ))
 
-// addMoviesToDom(movies)
+addMoviesToDom(movies)
 
 function handleOnChangeEvent(event){
     console.log(event.target)

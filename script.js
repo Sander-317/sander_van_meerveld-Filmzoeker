@@ -59,11 +59,25 @@ function filterLatestMovies() {
 
 function addMoviesToDom(movieArray){
     movieArray.map((item) => {
-        moviePoster = item.Poster
+        let newLiTag = document.createElement("li")
+        let newATag = document.createElement("a")
         let newPoster = document.createElement("img")
+        moviePoster = item.Poster
+        let imdbId = item.imdbID
+        newATag.href = makeImdbLink(imdbId)
+        newATag.target = "_blank"
+       newATag.appendChild(newPoster)
+        newLiTag.appendChild(newATag)
+       
+       
        newPoster.src = `${moviePoster}`
-    movieList.appendChild(newPoster)
+    movieList.appendChild(newLiTag)
     })
 }
 
+function makeImdbLink(imdbId){
+    return  `https://www.imdb.com/title/${imdbId}/?ref_=fn_al_tt_1`
+}
 
+// imdb link
+// "https://www.imdb.com/title/tt1877832/?ref_=fn_al_tt_1"

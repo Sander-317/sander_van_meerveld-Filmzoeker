@@ -1,3 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+// font-family: 'Akaya Kanadaka', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+// font-family: 'Arvo', serif;
+
+
+
+
 body {
     background-color: green;
+    text-align: center;
+    max-width: 100vw;
+    box-sizing: border-box;
+    font-family: 'Arvo', serif;
+    justify-content: center;
+    align-items: center;
 }
+
+.flexbox-container {
+    margin: 5%;
+    margin-top: 20px;
+    
+}
+header {
+    display:flex;
+    height: 100px;
+    
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Akaya Kanadaka', cursive;
+    // vertical-align: middle;
+}
+
+.radio-button{
+    margin: 10px;
+}
+
+ul {
+   display:  flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    }
+
+    li{
+        margin: 5px;
+    }

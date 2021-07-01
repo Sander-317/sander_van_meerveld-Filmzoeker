@@ -49,11 +49,9 @@ function filterMovies(filter){
 function filterLatestMovies() {
     movieList.innerHTML =""
     filteredMovies = []
-    filteredMovies = movies.filter((item) => {
-        return item.Year >= "2014"
-     })
-        console.log(filteredMovies)
-        addMoviesToDom(filteredMovies)
+    filteredMovies = movies.filter((item) =>  item.Year >= "2014")
+    console.log(filteredMovies)
+    addMoviesToDom(filteredMovies)
 
 }
 
@@ -68,8 +66,6 @@ function addMoviesToDom(movieArray){
         newATag.target = "_blank"
        newATag.appendChild(newPoster)
         newLiTag.appendChild(newATag)
-       
-       
        newPoster.src = `${moviePoster}`
     movieList.appendChild(newLiTag)
     })

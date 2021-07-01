@@ -4,7 +4,7 @@ console.log(movies.length)
 
 const movieList = document.getElementById("movie-list")
 document.querySelectorAll(".radio-button").forEach(button => button.addEventListener("change", handleOnChangeEvent ))
-
+movieList.innerHTML =""
 addMoviesToDom(movies)
 
 function handleOnChangeEvent(event){
@@ -12,6 +12,7 @@ function handleOnChangeEvent(event){
     switch(event.target.value) {
         case "new-movies":
             console.log("new-movies")
+            filterLatestMovies()
             break
         case "avengers":
             console.log("avengers")
@@ -28,7 +29,6 @@ function handleOnChangeEvent(event){
         case "batman":
             console.log("batman")
             filterMovies("Batman")
-            // movies.filter(filterMovies("batman"))
             break
         default:
             addMoviesToDom(movies)
@@ -44,6 +44,17 @@ function filterMovies(filter){
         })
     console.log(filteredMovies)
     addMoviesToDom(filteredMovies)
+}
+
+function filterLatestMovies() {
+    movieList.innerHTML =""
+    filteredMovies = []
+    filteredMovies = movies.filter((item) => {
+        return item.Year >= "2014"
+     })
+        console.log(filteredMovies)
+        addMoviesToDom(filteredMovies)
+
 }
 
 function addMoviesToDom(movieArray){
